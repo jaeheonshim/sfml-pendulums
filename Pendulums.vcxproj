@@ -131,11 +131,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DoublePendulum.cpp" />
+    <ClCompile Include="GraphicalDoublePendulum.cpp" />
     <ClCompile Include="GraphicalPendulum.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SimplePendulum.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DoublePendulum.h" />
+    <ClInclude Include="GraphicalDoublePendulum.h" />
     <ClInclude Include="GraphicalPendulum.h" />
     <ClInclude Include="SimplePendulum.h" />
   </ItemGroup>

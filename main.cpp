@@ -3,23 +3,21 @@
 #include <cmath>
 #include <SFML/Graphics.hpp>
 #include "SimplePendulum.h"
+#include "DoublePendulum.h"
 #include "GraphicalPendulum.h"
+#include "GraphicalDoublePendulum.h"
 
 const sf::Color backgroundColor(234, 230, 227);
-const sf::Color massColor(31, 64, 69);
-const sf::Color rodColor(127, 149, 147);
-
-const float PI{ static_cast<float>(std::atan(1)) * 4 };
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1920, 1080), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(1920, 1080), "Pendulums");
 
     float ppm{ 400 };
-    sf::Vector2f origin(960, 100);
+    sf::Vector2f origin(960, 200);
 
-    SimplePendulum pendulum{ 3.14 / 2 };
-    GraphicalPendulum graphicalPendulum(origin, ppm, &pendulum);
+    DoublePendulum pendulum{ -3.14 / 4, 3.14 };
+    GraphicalDoublePendulum graphicalPendulum(origin, ppm, &pendulum);
 
     sf::Clock deltaClock;
 
@@ -37,7 +35,9 @@ int main()
         pendulum.step(dt);
 
         window.clear(backgroundColor);
+
         graphicalPendulum.draw(window);
+
         window.display();
     }
 

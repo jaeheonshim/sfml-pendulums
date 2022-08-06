@@ -24,12 +24,24 @@
     <ClCompile Include="GraphicalPendulum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DoublePendulum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicalDoublePendulum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SimplePendulum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GraphicalPendulum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DoublePendulum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicalDoublePendulum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
