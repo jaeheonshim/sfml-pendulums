@@ -29,9 +29,27 @@ void GraphicalDoublePendulum::draw(sf::RenderWindow& window) {
 	rod2.setPosition(bob1pos);
 	rod2.setRotation(-(pendulum->theta_2 / PI) * 180 + 90);
 
+	trailPoints1.push_back(sf::Vertex(bob1pos, trailColor));
+	trailPoints2.push_back(sf::Vertex(bob2pos, trailColor));
+
+	if (trailPoints1.size() > trail_count) {
+		trailPoints1.erase(trailPoints1.begin());
+	}
+
+	if (trailPoints2.size() > trail_count) {
+		trailPoints2.erase(trailPoints2.begin());
+	}
+
+	drawTrail(window);
+
 	window.draw(rod1);
 	window.draw(rod2);
 
 	window.draw(bob1);
 	window.draw(bob2);
+}
+
+void GraphicalDoublePendulum::drawTrail(sf::RenderWindow & window) {
+	window.draw(&trailPoints1[0], trailPoints1.size(), sf::LineStrip);
+	window.draw(&trailPoints2[0], trailPoints2.size(), sf::LineStrip);
 }
